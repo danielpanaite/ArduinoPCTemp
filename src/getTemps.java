@@ -24,7 +24,7 @@ public class getTemps {
             System.out.println(portNames[i]);
         }
 
-        System.out.println("Type port name, which you want to use, and press Enter...");
+        System.out.println("Type port name of connected device: ");
         Scanner in = new Scanner(System.in);
         String portName = in.next();
         serialPort = new SerialPort(portName);
@@ -103,7 +103,6 @@ public class getTemps {
                 //serialPort.addEventListener(new PortReader(), SerialPort.MASK_RXCHAR);
                 // writing string to port
                 serialPort.writeString("*" + (int)CPUTemp + "#" + (int)GPUTemp + "%");
-                System.out.println("*" + CPUTemp + "#" + GPUTemp + "%");
     
                 try {
                     Thread.sleep(200);
